@@ -1,0 +1,37 @@
+sudo: false
+
+language: ruby
+rvm:
+  - 2.1
+
+cache:
+  directories:
+  - vendor
+before_cache:
+- rm -rfv vendor/.installed  # force gems to refresh
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true  # speeds up installation of html-proofer
+
+branches:
+  except:
+  - gh-pages
+
+install:
+- make install
+
+
+before_script:
+  # Replace with the line that travis encrypt-file printed out
+  - git config remote.origin.url git@github.com:${TRAVIS_REPO_SLUG}
+  - COMMIT_MESSAGE="Test Commit `date "+%Y-%m-%d %H:%M:%S"` from `git log -n 1 --format='commit %h - %s'`"
+
+script:
+- make
+
+after_success: >
+  echo $TRAVIS_BRANCH; echo $TRAVIS_PULL_REQUEST;
+  if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
+  echo "Will Deploy From Here"
+fi
