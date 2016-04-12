@@ -1,25 +1,18 @@
-sudo: false
-
-language: ruby
-rvm:
-  - 2.1
-
-cache:
-  directories:
-  - vendor
-before_cache:
-- rm -rfv vendor/.installed  # force gems to refresh
-
-env:
-  global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true  # speeds up installation of html-proofer
+language: python
+python:
+- '2.7'
+- '3.3'
+- pypy
+before_install:
+- openssl aes-256-cbc -K $encrypted_48b5285fe911_key -iv $encrypted_48b5285fe911_iv
+  -in .travisdeploykey.enc -out .travisdeploykey -d
 
 branches:
   except:
   - gh-pages
 
 install:
-- make install
+- pip install mkdocs
 
 
 before_script:
@@ -28,10 +21,22 @@ before_script:
   - COMMIT_MESSAGE="Test Commit `date "+%Y-%m-%d %H:%M:%S"` from `git log -n 1 --format='commit %h - %s'`"
 
 script:
-- make
+- mkdocs build
 
 after_success: >
   echo $TRAVIS_BRANCH; echo $TRAVIS_PULL_REQUEST;
   if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
   echo "Will Deploy From Here"
+  chmod go-rwx .travisdeploykey
+  eval `ssh-agent -s`
+  ssh-add .travisdeploykey
+  echo "docs.androidtamer.com" > sites/CNAME
+  #mkdocs gh-deploy
+  cd site
+  git add . ;
+  git config --global user.name "Travis-CI"
+  git config --global user.email "noreply@travis-ci.org"
+  git commit -S -m "Deploy Travis CI build $TRAVIS_BUILD_NUMBER to GitHub pages" ;
+  git push -v -f git@github.com:${TRAVIS_REPO_SLUG} master:gh-pages
+  echo "Deployed"
 fi
