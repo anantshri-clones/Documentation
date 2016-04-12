@@ -1,0 +1,6 @@
+site_name: AndroidTamer
+repo_url: http://github.com/AndroidTamer/
+site_description: Documentation for Android Tamer
+site_author: AndroidTamer Team
+docs_dir: ./
+#theme: readthedocs
