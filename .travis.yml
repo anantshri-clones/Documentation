@@ -1,8 +1,7 @@
 language: python
 python:
 - '2.7'
-- '3.3'
-- pypy
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_48b5285fe911_key -iv $encrypted_48b5285fe911_iv
   -in .travisdeploykey.enc -out .travisdeploykey -d
