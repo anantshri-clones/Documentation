@@ -3,8 +3,7 @@ python:
 - '2.7'
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_48b5285fe911_key -iv $encrypted_48b5285fe911_iv
-  -in .travisdeploykey.enc -out .travisdeploykey -d
+- openssl aes-256-cbc -K $encrypted_48b5285fe911_key -iv $encrypted_48b5285fe911_iv -in .travisdeploykey.enc -out .travisdeploykey -d
 
 branches:
   except:
@@ -26,13 +25,14 @@ after_success: >
   echo $TRAVIS_BRANCH; echo $TRAVIS_PULL_REQUEST;
   if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
     echo "Will Deploy From Here"
+    #openssl aes-256-cbc -K $encrypted_48b5285fe911_key -iv $encrypted_48b5285fe911_iv -in .travisdeploykey.enc -out .travisdeploykey -d
+    rm -rf .git ;
     chmod go-rwx .travisdeploykey
     eval `ssh-agent -s`
     ssh-add .travisdeploykey
-    #mkdocs gh-deploy
-    rm -rf .git ;
+    ssh-add -l
     cd site
-    echo "docs.and roidtamer.com" > ./CNAME
+    echo "docs.androidtamer.com" > ./CNAME
     git init ;
     git add . ;
     git config --global user.name "Travis-CI";
