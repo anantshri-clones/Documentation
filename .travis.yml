@@ -32,7 +32,8 @@ after_success: >
     #mkdocs gh-deploy
     rm -rf .git ;
     cd site
-    echo "docs.androidtamer.com" > ./CNAME
+    echo "docs.and roidtamer.com" > ./CNAME
+    git init ;
     git add . ;
     git config --global user.name "Travis-CI";
     git config --global user.email "noreply@travis-ci.org";
