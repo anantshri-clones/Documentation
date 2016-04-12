@@ -26,17 +26,17 @@ script:
 after_success: >
   echo $TRAVIS_BRANCH; echo $TRAVIS_PULL_REQUEST;
   if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
-  echo "Will Deploy From Here"
-  chmod go-rwx .travisdeploykey
-  eval `ssh-agent -s`
-  ssh-add .travisdeploykey
-  echo "docs.androidtamer.com" > sites/CNAME
-  #mkdocs gh-deploy
-  cd site
-  git add . ;
-  git config --global user.name "Travis-CI"
-  git config --global user.email "noreply@travis-ci.org"
-  git commit -S -m "Deploy Travis CI build $TRAVIS_BUILD_NUMBER to GitHub pages" ;
-  git push -v -f git@github.com:${TRAVIS_REPO_SLUG} master:gh-pages
-  echo "Deployed"
-fi
+    echo "Will Deploy From Here"
+    chmod go-rwx .travisdeploykey
+    eval `ssh-agent -s`
+    ssh-add .travisdeploykey
+    echo "docs.androidtamer.com" > sites/CNAME
+    #mkdocs gh-deploy
+    cd site
+    git add . ;
+    git config --global user.name "Travis-CI";
+    git config --global user.email "noreply@travis-ci.org";
+    git commit -S -m "Deploy Travis CI build $TRAVIS_BUILD_NUMBER to GitHub pages";
+    git push -v -f git@github.com:${TRAVIS_REPO_SLUG} master:gh-pages
+    echo "Deployed";
+  fi
