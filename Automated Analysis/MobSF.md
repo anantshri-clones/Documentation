@@ -40,6 +40,13 @@ From the website itself
 
 	Mobile Security Framework is an intelligent, all-in-one open source mobile application (Android/iOS) automated pen-testing framework capable of performing static, dynamic analysis and web API testing. http://opensecurity.in
 
+### Additional References
+
+![nullcon-slides](http://www.slideshare.net/ajin25/nullcon-goa-2016-automated-mobile-application-security-testing-with-mobile-security-framework-mobsf)
+
+![cocon-slide](http://www.slideshare.net/ajin25/automated-security-analysis-of-android-ios-applications-with-mobile-security-framework-c0c0n-2015)
+
+![g4h-webcast](http://www.slideshare.net/ajin25/g4h-webcast-automated)
 
 ### TODO for Guide
 
