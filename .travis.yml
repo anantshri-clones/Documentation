@@ -11,6 +11,9 @@ branches:
 
 install:
 - pip install mkdocs
+- pip install pyembed-markdown
+- pip install markdown-newtab
+- pip install markdown-checklist
 
 
 before_script:
@@ -32,6 +35,13 @@ after_success: >
     ssh-add .travisdeploykey
     ssh-add -l
     cd site
+    python -m simpleHTTPServer &
+    PID=$!
+    echo PID
+    ps aux | grep SimpleHTTPServer
+    linkchecker http://127.0.0.1:8000/
+    kill -KILL $PID
+    ps aux | grep SimpleHTTPServer
     echo "docs.androidtamer.com" > ./CNAME
     git init ;
     git add . ;
