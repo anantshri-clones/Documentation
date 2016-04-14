@@ -4,3 +4,7 @@ site_description: Documentation for Android Tamer
 site_author: AndroidTamer Team
 docs_dir: ./
 #theme: readthedocs
+markdown_extensions:
+  - markdown_newtab
+  - oembed
+  - markdown_checklist.extension
