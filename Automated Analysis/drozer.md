@@ -22,9 +22,8 @@ AndroidTamer has a build in script which will automatically run all the modules 
 
 ```android@tamer$ drozer_check <package name> <device_name>```
 
-### Sample scan
 
-TODO
+![drozer](/images/drozer_check.jpg)
 
 
 ### Known issues
@@ -36,9 +35,10 @@ You are running drozer on a x86 machine or genymotion emulator. there is a known
 [Refer here](https://github.com/mwrlabs/drozer/issues/203)
 
 __Question:__ Drozer caused error's.
+
 __Answer:__ 
 If you find error in drozer please [raise an issue here](https://github.com/mwrlabs/drozer/issues/) however if you feel issue is with the automation please [raise an issue here](https://github.com/AndroidTamer/Tools_Repository/issues)
 
 ### Software Details
 #### MWR Labs
-#### URL (https://labs.mwrinfosecurity.com/tools/drozer/)[https://labs.mwrinfosecurity.com/tools/drozer/]
+URL [https://labs.mwrinfosecurity.com/tools/drozer/](https://labs.mwrinfosecurity.com/tools/drozer/)
