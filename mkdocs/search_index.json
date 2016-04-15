@@ -1,0 +1,234 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Documentation\n\n\nExperimental Repository to host all documentation for Android Tamer", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#documentation", 
+            "text": "Experimental Repository to host all documentation for Android Tamer", 
+            "title": "Documentation"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/", 
+            "text": "MobSF: Mobile Security Framework\n\n\nHow to Use with AndroidTamer\n\n\nMobSF is preconfigured in the AndroidTamer Pacakges\n\n\nLaunch MobSF via \n\n\nandroid@tamer$ mobsf\n\n\n\nNow you just need to navigate to \n\n\nhttp://localhost:3000\n\n\nand you should have running mobsf instance.\n\n\n\n\nAt this point you can see the console output, for first time it will create folder in ~ i.e. user home directory.\n\n\nA folder is created in \n~/.mobsf/\n which will contain the file\n\n\nNote:\n Remember you don't need to run this command as sudo. Run this as normal user.\n\n\nHow is it different from Original Source Code\n\n\nOriginal sourcecode: \nhttps://github.com/ajinabraham/Mobile-Security-Framework-MobSF\n\n\nModified sourcecode: \nhttps://github.com/AndroidTamer/Mobile-Security-Framework-MobSF\n\n\nMajor difference is in the approach how tool will store data. In original Code author assumes the standard play that user will git clone and then all data will be stored inside the folder. However for distributions thats not how we wanted it to work so the code that we modify is mainly the settings file where we ensure all data that needs to be dynamic in nature is sourced from the users home directory and not the default location.\n\n\nThis allows flexibility that multiple users can run mobsf and have there own results. This also allows us to keep mobsf updates as distinct as possible. However this also puts us in a position where we can't push mobsf updates as soon as they are released we are working with the author to streamline the process.\n\n\nThings to keep in mind\n\n\n\n\nDon't run the command as sudo user.\n\n\nIf you get error messages around permission denied, those can be safely ignored as all commands are by default in path and hence those are non needed steps.\n\n\n\n\nSoftware Details\n\n\nAuthor: Ajin Abraham\n\n\nURL: \nhttps://github.com/ajinabraham/Mobile-Security-Framework-MobSF\n\n\nFrom the website itself\n\n\nMobile Security Framework is an intelligent, all-in-one open source mobile application (Android/iOS) automated pen-testing framework capable of performing static, dynamic analysis and web API testing. http://opensecurity.in\n\n\n\nAdditional References\n\n\nnullcon-slides\n\n\ncocon-slide\n\n\ng4h-webcast\n\n\nTODO for Guide\n\n\n\n\nAdd images to show how process works\n\n\nLink to the official guide or write your own", 
+            "title": "MobSF"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#mobsf-mobile-security-framework", 
+            "text": "", 
+            "title": "MobSF: Mobile Security Framework"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#how-to-use-with-androidtamer", 
+            "text": "MobSF is preconfigured in the AndroidTamer Pacakges  Launch MobSF via   android@tamer$ mobsf  Now you just need to navigate to   http://localhost:3000  and you should have running mobsf instance.   At this point you can see the console output, for first time it will create folder in ~ i.e. user home directory.  A folder is created in  ~/.mobsf/  which will contain the file  Note:  Remember you don't need to run this command as sudo. Run this as normal user.", 
+            "title": "How to Use with AndroidTamer"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#how-is-it-different-from-original-source-code", 
+            "text": "Original sourcecode:  https://github.com/ajinabraham/Mobile-Security-Framework-MobSF  Modified sourcecode:  https://github.com/AndroidTamer/Mobile-Security-Framework-MobSF  Major difference is in the approach how tool will store data. In original Code author assumes the standard play that user will git clone and then all data will be stored inside the folder. However for distributions thats not how we wanted it to work so the code that we modify is mainly the settings file where we ensure all data that needs to be dynamic in nature is sourced from the users home directory and not the default location.  This allows flexibility that multiple users can run mobsf and have there own results. This also allows us to keep mobsf updates as distinct as possible. However this also puts us in a position where we can't push mobsf updates as soon as they are released we are working with the author to streamline the process.", 
+            "title": "How is it different from Original Source Code"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#things-to-keep-in-mind", 
+            "text": "Don't run the command as sudo user.  If you get error messages around permission denied, those can be safely ignored as all commands are by default in path and hence those are non needed steps.", 
+            "title": "Things to keep in mind"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#software-details", 
+            "text": "", 
+            "title": "Software Details"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#author-ajin-abraham", 
+            "text": "", 
+            "title": "Author: Ajin Abraham"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#url-httpsgithubcomajinabrahammobile-security-framework-mobsf", 
+            "text": "From the website itself  Mobile Security Framework is an intelligent, all-in-one open source mobile application (Android/iOS) automated pen-testing framework capable of performing static, dynamic analysis and web API testing. http://opensecurity.in", 
+            "title": "URL: https://github.com/ajinabraham/Mobile-Security-Framework-MobSF"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#additional-references", 
+            "text": "nullcon-slides  cocon-slide  g4h-webcast", 
+            "title": "Additional References"
+        }, 
+        {
+            "location": "/Automated Analysis/MobSF/#todo-for-guide", 
+            "text": "Add images to show how process works  Link to the official guide or write your own", 
+            "title": "TODO for Guide"
+        }, 
+        {
+            "location": "/Automated Analysis/drozer/", 
+            "text": "Drozer\n\n\nHow to use with AndroidTamer\n\n\nDrozer is already pre configured within AndroidTamer. However there are some steps required before starting drozer.\n\n\n\n\nWe need to start device / emulator and connect that to the AndroidTamer Machine.\n\n\nOnce device connected we need to install a drozer_client APK.\n\n\nClient apk is available via \ndrozer_client_install\n command\nas shown below\n\nandroid@tamer$ drozer_client_install \ndevicename\n\n\nOnce device shows that the apk is installed then we are ready to use drozer\n\n\nTo start using drozer type following\n\nandroid@tamer$ drozer_connect \ndevice_name\n\n\n\n\nDynamic Assessment via Drozer\n\n\nDrozer at this point doesn't provide html/xml style reporting the report output is directly provided to the console.\n\n\nAndroidTamer has a build in script which will automatically run all the modules that are available in drozer and will give you a textual output on screen. Its advised to save the output in a text file for further / delayed analysis.\n\n\nandroid@tamer$ drozer_check \npackage name\n \ndevice_name\n\n\n\n\nKnown issues\n\n\nQuestion:\n Why am i getting error \"Magic number incorrect\"\n\n\nAnswer:\n\nYou are running drozer on a x86 machine or genymotion emulator. there is a known issue and that's the reason why you get those errors.\n\nRefer here\n\n\nQuestion:\n Drozer caused error's.\n\n\nAnswer:\n \nIf you find error in drozer please \nraise an issue here\n however if you feel issue is with the automation please \nraise an issue here\n\n\nSoftware Details\n\n\nMWR Labs\n\n\nURL \nhttps://labs.mwrinfosecurity.com/tools/drozer/", 
+            "title": "Drozer"
+        }, 
+        {
+            "location": "/Automated Analysis/drozer/#drozer", 
+            "text": "", 
+            "title": "Drozer"
+        }, 
+        {
+            "location": "/Automated Analysis/drozer/#how-to-use-with-androidtamer", 
+            "text": "Drozer is already pre configured within AndroidTamer. However there are some steps required before starting drozer.   We need to start device / emulator and connect that to the AndroidTamer Machine.  Once device connected we need to install a drozer_client APK.  Client apk is available via  drozer_client_install  command\nas shown below android@tamer$ drozer_client_install  devicename  Once device shows that the apk is installed then we are ready to use drozer  To start using drozer type following android@tamer$ drozer_connect  device_name", 
+            "title": "How to use with AndroidTamer"
+        }, 
+        {
+            "location": "/Automated Analysis/drozer/#dynamic-assessment-via-drozer", 
+            "text": "Drozer at this point doesn't provide html/xml style reporting the report output is directly provided to the console.  AndroidTamer has a build in script which will automatically run all the modules that are available in drozer and will give you a textual output on screen. Its advised to save the output in a text file for further / delayed analysis.  android@tamer$ drozer_check  package name   device_name", 
+            "title": "Dynamic Assessment via Drozer"
+        }, 
+        {
+            "location": "/Automated Analysis/drozer/#known-issues", 
+            "text": "Question:  Why am i getting error \"Magic number incorrect\"  Answer: \nYou are running drozer on a x86 machine or genymotion emulator. there is a known issue and that's the reason why you get those errors. Refer here  Question:  Drozer caused error's.  Answer:  \nIf you find error in drozer please  raise an issue here  however if you feel issue is with the automation please  raise an issue here", 
+            "title": "Known issues"
+        }, 
+        {
+            "location": "/Automated Analysis/drozer/#software-details", 
+            "text": "", 
+            "title": "Software Details"
+        }, 
+        {
+            "location": "/Automated Analysis/drozer/#mwr-labs", 
+            "text": "URL  https://labs.mwrinfosecurity.com/tools/drozer/", 
+            "title": "MWR Labs"
+        }, 
+        {
+            "location": "/Development/basics/", 
+            "text": "Basic Development Tools\n\n\nAndroid-Studio\n\n\nAndroidStudio is already installed and configured in your path\n\n\nandroid@tamer $ android-studio\n\n\n\n\nAndroid SDK\n\n\nandroid@tamer $ android sdk\n\n\n\n\nAndroid AVD Management\n\n\nAs Android Tamer is a virtual machine environment hence its recommended to run emulator only when you have aloocated more then 2 GB of RAM to the virtual machine.\n\n\nTo Directly launch AVD manager type following command\n\n\nandroid@tamer $ android avd\n\n\n\n\nDevelop an Application\n\n\nLaunch android studio\n\n\nandroid-studio", 
+            "title": "Basics"
+        }, 
+        {
+            "location": "/Development/basics/#basic-development-tools", 
+            "text": "", 
+            "title": "Basic Development Tools"
+        }, 
+        {
+            "location": "/Development/basics/#android-studio", 
+            "text": "AndroidStudio is already installed and configured in your path  android@tamer $ android-studio", 
+            "title": "Android-Studio"
+        }, 
+        {
+            "location": "/Development/basics/#android-sdk", 
+            "text": "android@tamer $ android sdk", 
+            "title": "Android SDK"
+        }, 
+        {
+            "location": "/Development/basics/#android-avd-management", 
+            "text": "As Android Tamer is a virtual machine environment hence its recommended to run emulator only when you have aloocated more then 2 GB of RAM to the virtual machine.  To Directly launch AVD manager type following command  android@tamer $ android avd", 
+            "title": "Android AVD Management"
+        }, 
+        {
+            "location": "/Development/basics/#develop-an-application", 
+            "text": "", 
+            "title": "Develop an Application"
+        }, 
+        {
+            "location": "/Development/basics/#launch-android-studio", 
+            "text": "android-studio", 
+            "title": "Launch android studio"
+        }, 
+        {
+            "location": "/General/connecting_devices/", 
+            "text": "Connecting Devices to AndroidTamer", 
+            "title": "Connecting devices"
+        }, 
+        {
+            "location": "/General/connecting_devices/#connecting-devices-to-androidtamer", 
+            "text": "", 
+            "title": "Connecting Devices to AndroidTamer"
+        }, 
+        {
+            "location": "/General/decompile/", 
+            "text": "Decompiling Application\n\n\nhow to decompile application in AndroidTamer\n\n\nAndroid Tamer has all the tools required to perform the application analysis manually however we have gone one step ahead and added more automation to reduce the time spend on remembering command and running them.\n\n\nTo decompile application in AndroidTamer\n\n\nandroid@tamer$ apk2java \napk\n\n\nNOTE:\n the source code for [apk2java are here]\n\n\nThis will give you a folder structure as shown below\n\n\n\n\nHere \nsmali\n folder contains the smali version of the source code\nwhere as \nsrc\n folder contains two subfolder \njad\n and \njadx\n containing source codes decompiled via these two decompilers respectively.\n\n\nIf you are not satisfied with the results you can also refer to the original jar created via enjarify in \njar\n folder.\n\n\nYou can launch a text editor in this directory using following command\n\n\nandroid@tamer $ geany ./\n\n\n\n\nCan other distributions use it\n\n\nYes, glad you asked \nfollow steps outlined here", 
+            "title": "Decompile"
+        }, 
+        {
+            "location": "/General/decompile/#decompiling-application", 
+            "text": "", 
+            "title": "Decompiling Application"
+        }, 
+        {
+            "location": "/General/decompile/#how-to-decompile-application-in-androidtamer", 
+            "text": "Android Tamer has all the tools required to perform the application analysis manually however we have gone one step ahead and added more automation to reduce the time spend on remembering command and running them.  To decompile application in AndroidTamer  android@tamer$ apk2java  apk  NOTE:  the source code for [apk2java are here]  This will give you a folder structure as shown below   Here  smali  folder contains the smali version of the source code\nwhere as  src  folder contains two subfolder  jad  and  jadx  containing source codes decompiled via these two decompilers respectively.  If you are not satisfied with the results you can also refer to the original jar created via enjarify in  jar  folder.  You can launch a text editor in this directory using following command  android@tamer $ geany ./", 
+            "title": "how to decompile application in AndroidTamer"
+        }, 
+        {
+            "location": "/General/decompile/#can-other-distributions-use-it", 
+            "text": "Yes, glad you asked  follow steps outlined here", 
+            "title": "Can other distributions use it"
+        }, 
+        {
+            "location": "/General/extracting_apk/", 
+            "text": "Extracting APK from Device\n\n\nadb shell pm list packages -f\n\n\n\n\npick name and path\n\n\nadb pull \npath\n ./", 
+            "title": "Extracting apk"
+        }, 
+        {
+            "location": "/General/extracting_apk/#extracting-apk-from-device", 
+            "text": "adb shell pm list packages -f  pick name and path  adb pull  path  ./", 
+            "title": "Extracting APK from Device"
+        }, 
+        {
+            "location": "/General/installing_apk/", 
+            "text": "install packages in Android Device", 
+            "title": "Installing apk"
+        }, 
+        {
+            "location": "/General/installing_apk/#install-packages-in-android-device", 
+            "text": "", 
+            "title": "install packages in Android Device"
+        }, 
+        {
+            "location": "/General/multi_devices/", 
+            "text": "Managing multiple devices\n\n\nDue to massive fragmentation and the will of vendors to keep selling devices with old versions. Android Professionals are forced to work with multiple devices / emulator's with various versions of android loaded on them.\n\n\nWith this problem in mind we went ahead and \nwrote a shim\n which should help us with this problem. To manage multiple devices in AndroidTamer you need to follow these steps\n\n\n\n\nCreate a file in your home folder called as \n.adb_list\n\n\n\n\n\n\n\n\nOnce the list is configured then you can go ahead and check the status of each device.\n\n\n\n\n\n\nHere any device line marked as GREEN means its connected and RED means its not connected.\n\n\n\n\nNow to connect to this device follow this command\n\n\n\n\nandroid@tamer $ adb geny shell\n\n\n\n\nHere you can see instead of remembering the complex ip address or serial number we can simply use the new name provided for this functionality.", 
+            "title": "Multi devices"
+        }, 
+        {
+            "location": "/General/multi_devices/#managing-multiple-devices", 
+            "text": "Due to massive fragmentation and the will of vendors to keep selling devices with old versions. Android Professionals are forced to work with multiple devices / emulator's with various versions of android loaded on them.  With this problem in mind we went ahead and  wrote a shim  which should help us with this problem. To manage multiple devices in AndroidTamer you need to follow these steps   Create a file in your home folder called as  .adb_list     Once the list is configured then you can go ahead and check the status of each device.    Here any device line marked as GREEN means its connected and RED means its not connected.   Now to connect to this device follow this command   android@tamer $ adb geny shell  Here you can see instead of remembering the complex ip address or serial number we can simply use the new name provided for this functionality.", 
+            "title": "Managing multiple devices"
+        }, 
+        {
+            "location": "/General/repo_configure/", 
+            "text": "AndroidTamer Repository in Debian 8\n\n\nHow to configure\n\n\n$ echo \ndeb http://repo.androidtamer.com Tamer4 main\n | sudo tee  /etc/apt/sources.list.d/repo_androidtamer_com.list\n\n\n\n\nAdding GPG Key\n\n\n\n\n\nHow to install pacakges\n\n\n$ sudo apt-get update\n$ sudo apt-get install \npackage name\n\n\n\n\n\nGUI\n\n\nSynaptic screenshot", 
+            "title": "Repo configure"
+        }, 
+        {
+            "location": "/General/repo_configure/#androidtamer-repository-in-debian-8", 
+            "text": "", 
+            "title": "AndroidTamer Repository in Debian 8"
+        }, 
+        {
+            "location": "/General/repo_configure/#how-to-configure", 
+            "text": "$ echo  deb http://repo.androidtamer.com Tamer4 main  | sudo tee  /etc/apt/sources.list.d/repo_androidtamer_com.list", 
+            "title": "How to configure"
+        }, 
+        {
+            "location": "/General/repo_configure/#adding-gpg-key", 
+            "text": "", 
+            "title": "Adding GPG Key"
+        }, 
+        {
+            "location": "/General/repo_configure/#how-to-install-pacakges", 
+            "text": "$ sudo apt-get update\n$ sudo apt-get install  package name", 
+            "title": "How to install pacakges"
+        }, 
+        {
+            "location": "/General/repo_configure/#gui", 
+            "text": "Synaptic screenshot", 
+            "title": "GUI"
+        }, 
+        {
+            "location": "/General/screenshot/", 
+            "text": "How to take screenshots of device\n\n\nTaking screenshots is very important part of any process be it development or anything else. ADB provides a way to take screenshot via screencap but then there is a specific command set that needs to be followed.\n\n\nHere we have created added another feature in our \nadb shim called as adb_wrapper\n \n\n\nnow to take screenshot all you need to do is \n\n\nandroid@tamer $ adb screenshot savefile.png\n\n\n\n\nNote:\n the screenshot output is always \n.png\n so keep that in mind\n\n\nLike all other command this command can also be used with multidevice setup\n\n\nandroid@tamer $ adb geny screenshot geny_shot.png\n\n\n\n\nThis will take a screenshot of geny machine and will save it as \ngeny_shot.png", 
+            "title": "Screenshot"
+        }, 
+        {
+            "location": "/General/screenshot/#how-to-take-screenshots-of-device", 
+            "text": "Taking screenshots is very important part of any process be it development or anything else. ADB provides a way to take screenshot via screencap but then there is a specific command set that needs to be followed.  Here we have created added another feature in our  adb shim called as adb_wrapper    now to take screenshot all you need to do is   android@tamer $ adb screenshot savefile.png  Note:  the screenshot output is always  .png  so keep that in mind  Like all other command this command can also be used with multidevice setup  android@tamer $ adb geny screenshot geny_shot.png  This will take a screenshot of geny machine and will save it as  geny_shot.png", 
+            "title": "How to take screenshots of device"
+        }
+    ]
+}
