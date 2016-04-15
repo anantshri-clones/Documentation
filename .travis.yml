@@ -34,13 +34,12 @@ after_success: >
     chmod go-rwx .travisdeploykey
     eval `ssh-agent -s`
     ssh-add .travisdeploykey
-    ssh-add -l
     cd site
-    python -m simpleHTTPServer &
+    python -m SimpleHTTPServer &
     PID=$!
     echo PID
     ps aux | grep SimpleHTTPServer
-    linkchecker http://127.0.0.1:8000/
+    #linkchecker http://127.0.0.1:8000/
     kill -KILL $PID
     ps aux | grep SimpleHTTPServer
     echo "docs.androidtamer.com" > ./CNAME

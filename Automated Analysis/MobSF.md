@@ -29,7 +29,7 @@ __Note:__ Remember you don't need to run this command as sudo. Run this as norma
 
 Original sourcecode: [https://github.com/ajinabraham/Mobile-Security-Framework-MobSF](https://github.com/ajinabraham/Mobile-Security-Framework-MobSF)
 
-Modified sourcecode: [https://github.com/AndroidTamer/Mobile-Security-Framework-MobSF](https://github.com/ajinabraham/Mobile-Security-Framework-MobSF)
+Modified sourcecode: [https://github.com/AndroidTamer/Mobile-Security-Framework-MobSF](https://github.com/AndroidTamer/Mobile-Security-Framework-MobSF)
 
 Major difference is in the approach how tool will store data. In original Code author assumes the standard play that user will git clone and then all data will be stored inside the folder. However for distributions thats not how we wanted it to work so the code that we modify is mainly the settings file where we ensure all data that needs to be dynamic in nature is sourced from the users home directory and not the default location.
 
